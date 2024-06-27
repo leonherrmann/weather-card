@@ -279,7 +279,7 @@ class WeatherCard extends LitElement {
         <span class="temp"
           >${this.getUnit("temperature") == "°F"
             ? Math.round(stateObj.attributes.temperature)
-            : stateObj.attributes.temperature}</span
+            : Math.round(stateObj.attributes.temperature)}</span
         >
         <span class="tempc"> ${this.getUnit("temperature")}</span>
       </div>
