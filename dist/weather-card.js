@@ -388,7 +388,7 @@ class WeatherCard extends LitElement {
                   )}') no-repeat; background-size: contain"
                 ></i>
                 <div class="highTemp">
-                  ${daily.temperature}${this.getUnit("temperature")}
+                  ${Math.round(daily.temperature)}${this.getUnit("temperature")}
                 </div>
                 ${daily.templow !== undefined
                   ? html`
