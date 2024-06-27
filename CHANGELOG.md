@@ -1,3 +1,7 @@
+## 1.2.1
+
+- Remove decimal from forecast
+
 ## 1.2.0
 
 - Added UI editor
