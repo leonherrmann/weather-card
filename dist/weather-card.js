@@ -1,6 +1,6 @@
-const LitElement = customElements.get("ha-panel-lovelace")
-  ? Object.getPrototypeOf(customElements.get("ha-panel-lovelace"))
-  : Object.getPrototypeOf(customElements.get("hc-lovelace"));
+const LitElement = customElements.get("hui-masonry-view")
+  ? Object.getPrototypeOf(customElements.get("hui-masonry-view"))
+  : Object.getPrototypeOf(customElements.get("hui-view"));
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
