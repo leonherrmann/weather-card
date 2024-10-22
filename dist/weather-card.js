@@ -279,7 +279,7 @@ class WeatherCard extends LitElement {
         <span class="temp"
           >${this.getUnit("temperature") == "°F"
             ? Math.round(stateObj.attributes.temperature)
-            : stateObj.attributes.temperature}</span
+            : Math.round(stateObj.attributes.temperature)}</span
         >
         <span class="tempc"> ${this.getUnit("temperature")}</span>
       </div>
@@ -428,9 +428,11 @@ class WeatherCard extends LitElement {
     return `${
       this._config.icons
         ? this._config.icons
-        : "/local/community/weather-card/icons/"
-    }${isNight ? weatherIconsNight[condition] : weatherIconsDay[condition]}${
-      this.isSelected(this._config.animated_icons) ? "" : "-static"
+        : "https://cdn.jsdelivr.net/gh/bramkragten/weather-card/dist/icons/"
+    }${
+      sun && sun.state == "below_horizon"
+        ? weatherIconsNight[condition]
+        : weatherIconsDay[condition]
     }.svg`;
   }
 
