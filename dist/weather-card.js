@@ -425,9 +425,8 @@ class WeatherCard extends LitElement {
   }
 
   getWeatherIcon(condition, sun) {
-    return `${
-      this._config.icons
-    }${
+    return `this._config.icon
+    ${
       sun && sun.state == "below_horizon"
         ? weatherIconsNight[condition]
         : weatherIconsDay[condition]
