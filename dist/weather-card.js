@@ -425,10 +425,12 @@ class WeatherCard extends LitElement {
   }
 
   getWeatherIcon(condition, sun) {
-    return `this._config.icons${
-      sun && sun.state == "below_horizon"
-        ? weatherIconsNight[condition]
-        : weatherIconsDay[condition]
+    return `${
+      this._config.icons
+        ? this._config.icons
+        : "/local/community/weather-card/icons/"
+    }${isNight ? weatherIconsNight[condition] : weatherIconsDay[condition]}${
+      this.isSelected(this._config.animated_icons) ? "" : "-static"
     }.svg`;
   }
 
